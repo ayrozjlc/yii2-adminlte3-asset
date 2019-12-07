@@ -7,11 +7,11 @@ class AdminLte3Asset extends AssetBundle
 {
 	public $sourcePath = '@vendor/almasaeed2010/adminlte';
     public $css = [
-        'dist/css/adminlte.css',
-        'plugins/font-awesome/css/font-awesome.css',
+        YII_ENV_DEV ? 'dist/css/adminlte.css' : 'dist/css/adminlte.min.css',
+        YII_ENV_DEV ? 'plugins/fontawesome-free/css/all.css' : 'plugins/fontawesome-free/css/all.css'
     ];
     public $js = [
-        'js/adminlte.js'
+        YII_ENV_DEV ? 'dist/js/adminlte.js' : 'dist/js/adminlte.min.js'
     ];
 
     public $depends = [
