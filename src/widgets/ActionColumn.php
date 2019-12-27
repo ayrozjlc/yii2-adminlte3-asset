@@ -14,40 +14,44 @@ use yii\helpers\Html;
  */
 class ActionColumn extends \yii\grid\ActionColumn
 {
-	protected $title;
+    protected $title;
+
     public function init()
     {
         parent::init();
-        $this->buttons = [
-            'view' => function ($url, $model)
-            {
-                $this->title = Yii::t('yii', 'View');
-                return $this->renderIcon('far fa-eye', $url);
-            },
-            'update' => function ($url, $model)
-            {
-                $this->title = Yii::t('yii', 'Update');
-                return $this->renderIcon('fas fa-pencil-alt', $url);
-            },
-            'delete' => function ($url, $model)
-            {
-                $this->title = Yii::t('yii', 'Delete');
-	            return $this->renderIcon('fas fa-trash', $url, [
-	            'data-confirm' => \Yii::t('yii', 'Are you sure you want to delete this item?'),
-		            'data-method' => 'post',
-		        ]);
-            }
-        ];
+
+        if (array_key_exists('view', $this->buttons) || array_key_exists('update', $this->buttons) || array_key_exists('delete', $this->buttons)) {
+            $this->buttons = [
+                'view' => function ($url, $model)
+                {
+                    $this->title = Yii::t('yii', 'View');
+                    return $this->renderIcon('far fa-eye', $url);
+                },
+                'update' => function ($url, $model)
+                {
+                    $this->title = Yii::t('yii', 'Update');
+                    return $this->renderIcon('fas fa-pencil-alt', $url);
+                },
+                'delete' => function ($url, $model)
+                {
+                    $this->title = Yii::t('yii', 'Delete');
+                    return $this->renderIcon('fas fa-trash', $url, [
+                    'data-confirm' => \Yii::t('yii', 'Are you sure you want to delete this item?'),
+                        'data-method' => 'post',
+                    ]);
+                }
+            ];
+        }
     }
 
     public function renderIcon($icon, $url, $options = [])
     {
-    	$options = array_merge([
-    		'data-toggle' => 'tooltip',
-    		'data-title' => $this->title,
-    		'data-pjax' => '0'
-    	], $options);
+        $options = array_merge([
+            'data-toggle' => 'tooltip',
+            'data-title' => $this->title,
+            'data-pjax' => '0'
+        ], $options);
 
-    	return Html::a('<i class="'.$icon.'"></i>',$url, $options);
+        return Html::a('<i class="'.$icon.'"></i>',$url, $options);
     }
 }
