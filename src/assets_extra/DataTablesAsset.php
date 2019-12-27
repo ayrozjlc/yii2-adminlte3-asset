@@ -7,7 +7,7 @@
 namespace ayrozjlc\adminlte3\assets_extra;
 use yii\web\AssetBundle;
 /**
- * Pace application asset bundle.
+ * DataTables asset bundle.
  *
  * @author Jose Lopez Chavez <ayroz.jlc@gmail.com>
  * @since 2.0
