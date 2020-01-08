@@ -35,7 +35,7 @@ class ActionColumn extends \yii\grid\ActionColumn
                 'delete' => function ($url, $model)
                 {
                     $this->title = Yii::t('yii', 'Delete');
-                    return $this->renderIcon('fas fa-trash', $url, [
+                    return $this->renderIcon('fas fa-trash-alt', $url, [
                     'data-confirm' => \Yii::t('yii', 'Are you sure you want to delete this item?'),
                         'data-method' => 'post',
                     ]);
