@@ -15,12 +15,12 @@ class DataTablesColReorderAsset extends AssetBundle
     public $sourcePath  = '@vendor/almasaeed2010/adminlte/plugins/datatables-colreorder';
 
     public $css = [
-        YII_ENV_DEV ? 'css/colReorder.bootstrap4.css' : 'css/colReorder.bootstrap4.min.css'
+        'css/colReorder.bootstrap4.css'
     ];
 
     public $js = [
-        YII_ENV_DEV ? 'js/dataTables.colReorder.js' : 'dataTables.colReorder.min.js',
-        YII_ENV_DEV ? 'js/colReorder.bootstrap4.js' : 'colReorder.bootstrap4.min.js'
+        'js/dataTables.colReorder.js',
+        'js/colReorder.bootstrap4.js'
     ];
 
     public $depends = [

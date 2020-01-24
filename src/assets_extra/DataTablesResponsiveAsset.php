@@ -15,12 +15,12 @@ class DataTablesResponsiveAsset extends AssetBundle
     public $sourcePath  = '@vendor/almasaeed2010/adminlte/plugins/datatables-responsive';
 
     public $css = [
-        YII_ENV_DEV ? 'css/responsive.bootstrap4.css' : 'css/responsive.bootstrap4.min.css'
+        'css/responsive.bootstrap4.css'
     ];
 
     public $js = [
-        YII_ENV_DEV ? 'js/dataTables.responsive.js' : 'dataTables.responsive.min.js',
-        YII_ENV_DEV ? 'js/responsive.bootstrap4.js' : 'responsive.bootstrap4.min.js'
+        'js/dataTables.responsive.js',
+        'js/responsive.bootstrap4.js'
     ];
 
     public $depends = [
