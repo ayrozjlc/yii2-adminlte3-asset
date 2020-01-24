@@ -10,17 +10,16 @@ use yii\web\AssetBundle;
  * DataTables register script colReorder asset bundle.
  * @author Jose Lopez Chavez <ayroz.jlc@gmail.com>
  */
-class DataTablesColReorderAsset extends AssetBundle
+class DataTablesDateTimeAsset extends AssetBundle
 {
-    public $sourcePath  = '@vendor/almasaeed2010/adminlte/plugins/datatables-colreorder';
-
-    public $css = [
-        YII_ENV_DEV ? 'css/colReorder.bootstrap4.css' : 'css/colReorder.bootstrap4.min.css'
-    ];
+    public $sourcePath  = null;
 
     public $js = [
-        YII_ENV_DEV ? 'js/dataTables.colReorder.js' : 'dataTables.colReorder.min.js',
-        YII_ENV_DEV ? 'js/colReorder.bootstrap4.js' : 'colReorder.bootstrap4.min.js'
+        '//cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js',
+    ];
+
+    public $jsOptions = [
+        'position' => \yii\web\View::POS_END
     ];
 
     public $depends = [
