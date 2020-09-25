@@ -24,6 +24,8 @@ class DataTables extends \yii\grid\GridView
     */
     public $options = [];
 
+    public $extendDataTable;
+
     /**
     * @var array the HTML attributes for the datatables table element.
     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
@@ -48,7 +50,11 @@ class DataTables extends \yii\grid\GridView
         DataTablesBootstrapAsset::register($view);
 
         $options = Json::encode($clientOptions);
-        $view->registerJs("jQuery('#$id').DataTable($options);");
+        if (is_null($this->extendDataTable)) {
+            $view->registerJs("jQuery('#$id').DataTable($options);");
+        } else {
+            $view->registerJs("$this->extendDataTable = jQuery('#$id').DataTable($options);");
+        }
 
         //base list view run
         if ($this->showOnEmpty || $this->dataProvider->getCount() > 0) {
