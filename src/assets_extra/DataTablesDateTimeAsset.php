@@ -12,10 +12,10 @@ use yii\web\AssetBundle;
  */
 class DataTablesDateTimeAsset extends AssetBundle
 {
-    public $sourcePath  = null;
+    public $sourcePath  = '@bower/datetime-moment';
 
     public $js = [
-        '//cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js',
+        'dist/datetime-moment.js',
     ];
 
     public $jsOptions = [
