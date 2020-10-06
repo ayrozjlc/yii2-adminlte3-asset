@@ -12,10 +12,11 @@ use yii\web\AssetBundle;
  */
 class DataTablesDateTimeAsset extends AssetBundle
 {
-    public $sourcePath  = '@bower/datetime-moment';
+    public $sourcePath  = '@bower';
 
     public $js = [
-        'dist/datetime-moment.js',
+        'moment/min/moment.min.js',
+        'datetime-moment/dist/datetime-moment.js',
     ];
 
     public $jsOptions = [
