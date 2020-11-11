@@ -2,6 +2,28 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 
+$items = [
+    [
+        'label' => 'Dashboard',
+        'url' => ['/site/index'],
+        'icon' => 'th'
+    ],
+    [
+        'label' => 'menu example',
+        'url' => "#",
+        'icon' => 'users'
+    ],
+    [
+        'label' => 'menu example 2',
+        'url' => '#',
+        'icon' => 'file-invoice-dollar'
+    ],
+    [
+        'label' => 'menu example 3',
+        'url' => '#',
+        'icon' => 'tools'
+    ]
+];
 ?>
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4 sidebar-dark-purple">
@@ -28,42 +50,10 @@ use yii\helpers\Url;
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-users"></i>
-              <p>
-                menu example
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-             <i class="fas fa-file-invoice-dollar"></i>
-              <p>
-                menu example
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-             <i class="fas fa-tools"></i>
-              <p>
-                menu example
-              </p>
-            </a>
-          </li>
-        </ul>
+        <?= ayrozjlc\adminlte3\widgets\Menu::widget([
+            'items' => $items,
+            'itemOptions' => ['class' => 'nav-item'],
+        ]); ?>
       </nav>
       <!-- /.sidebar-menu -->
     </div>

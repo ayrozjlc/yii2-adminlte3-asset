@@ -12,7 +12,9 @@
         "backend",
         "asset",
         "css",
-        "bootstrap4"
+        "bootstrap4",
+        "widgets",
+        "assets"
     ],
     "license": "BSD-3-Clause",
     "authors": [

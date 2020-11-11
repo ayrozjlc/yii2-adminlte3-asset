@@ -25,7 +25,7 @@ to the ```require``` section of your `composer.json` file.
 
 Quick Start
 -----------
-* 1.- In view (for example: ```@app/views/layouts/main.php```)
+* In view (for example: ```@app/views/layouts/main.php```)
 
 ```php
 // ...
@@ -39,25 +39,13 @@ or add to your ```assets/AppAsset.php```
 ```php
 public $depends = [
     // ...
-    '\ayrozjlc\adminlte3\AdminLte3Asset',
+    'ayrozjlc\adminlte3\AdminLte3Asset',
 ];
 ```
 
-* 2.- Disabled bootstrap3(for example: ```@app/config/main.php```)
-
-```php
-'components' => [
-    'assetManager' => [
-        'bundles' => [
-            'yii\bootstrap\BootstrapAsset' => [ 'css' => [] ],
-            'yii\bootstrap\BootstrapPluginAsset' => [ 'js' => [] ],
-            'yii\bootstrap4\BootstrapAsset' => [ 'css' => [] ]
-        ],
-    ],
-],
-```
-
-* 3.- You can have a **preview** by reconfiguring the path mappings of the view component:
+Preview
+-----------
+* You can have a **preview** by reconfiguring the path mappings of the view component:
 
 ```php
 'components' => [
@@ -71,8 +59,46 @@ public $depends = [
 ],
 ```
 
+Assets
+-----------
+* Example in view
+
+```php
+use ayrozjlc\adminlte3\assets_extra\IcheckAsset;
+
+IcheckAsset::register($this);
+```
+or add to your ```assets/AppAsset.php```
+
+```php
+public $depends = [
+    'ayrozjlc\adminlte3\assets_extra\PaceAsset',
+    'ayrozjlc\adminlte3\assets_extra\IcheckAsset',
+    'ayrozjlc\adminlte3\assets_extra\DataTablesAsset',
+    'ayrozjlc\adminlte3\assets_extra\DataTablesBootstrapAsset',
+];
+```
+
+Widgets
+-----------
+* Menu
+* ActionColumn
+* Alert
+* Datatables
+
+* example(menu)
+```php
+ayrozjlc\adminlte3\widgets\Menu::widget([
+    'items' => [
+        'label' => 'menu',
+        'url' => ['/site/index'],
+        'icon' => 'users' //$iconClassPrefix = 'fas fa-'
+    ],
+    'itemOptions' => ['class' => 'nav-item'],
+]);
+```
 
 Credits
 -------------
-*[Yii 2.0 Framework](http://www.yiiframework.com/doc-2.0)*
-*[AdminLTE3](https://adminlte.io/themes/v3)*
+* **[Yii 2.0 Framework](http://www.yiiframework.com/doc-2.0)**
+* **[AdminLTE3](https://adminlte.io/themes/v3)**
