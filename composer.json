@@ -33,12 +33,5 @@
         "psr-4": {
             "ayrozjlc\\adminlte3\\": "src"
         }
-    },
-    "config": {
-        "fxp-asset": {
-            "installer-paths": {
-                "bower-asset-library": "vendor/bower"
-            }
-        }
     }
 }
