@@ -26,7 +26,7 @@
     "require": {
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap4": "~2.0.6",
-        "almasaeed2010/adminlte": "~3.0",
+        "almasaeed2010/adminlte": "~3.1",
         "bower-asset/datetime-moment": "*"
     },
     "autoload": {
@@ -34,9 +34,11 @@
             "ayrozjlc\\adminlte3\\": "src"
         }
     },
-    "extra": {
-        "asset-installer-paths": {
-            "bower-asset-library": "vendor/bower"
+    "config": {
+        "fxp-asset": {
+            "installer-paths": {
+                "bower-asset-library": "vendor/bower"
+            }
         }
     }
 }
